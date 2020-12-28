@@ -1,0 +1,89 @@
+{{ define "main" }}
+  <div class="series">
+    <h1 class="title">{{ .Title }}</h1>
+    <div class="about">{{ .Content }}</div>
+    <div class="pre-info">
+      <div class="pre-info__item">
+        <h2>Prerequisites</h2>
+        <ul class="prerequisites">
+          {{ range .Params.prerequisites.required }}
+            <li class="prerequisites__required-item">{{ . }}</li>
+          {{ end }}
+        </ul>
+        {{ if not (eq (len .Params.prerequisites.recommended) 0) }}
+          <h3>Optional</h3>
+          <ul class="optional">
+            {{ range .Params.prerequisites.recommended }}
+              <li class="prerequisites__recommended-item">{{ . }}</li>
+            {{ end }}
+          </ul>
+        {{ end }}
+      </div>
+      <div class="pre-info__item">
+        <h2>What You'll Learn</h2>
+        <ul class="learning-goals">
+          {{ range (index .Params "learning-goals") }}
+            <li class="learning-goals__item">{{ . }}</li>
+          {{ end }}
+        </ul>
+      </div>
+      <div class="pre-info__item">
+        <h2>What's Out of Scope</h2>
+        <ul class="out-of-scope">
+          {{ range (index .Params "out-of-scope") }}
+            <li class="out-of-scope__item">{{ . }}</li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+    {{ if (isset .Params "what-you-will-build") }}
+      {{ if (not (eq (len (index .Params "what-you-will-build")) 0)) }}
+        <h2>What You'll Build</h2>
+        <div class="what-you-will-build">
+          {{ range (index .Params "what-you-will-build") }}
+            <div class="what-you-will-build__item">
+              <div class="what-you-will-build__item__image" style="background-image:url({{ .image }})"></div>
+              <div class="what-you-will-build__item__name">{{ .name }}</div>
+              <div class="what-you-will-build__item__description">{{ .description }}</div>
+            </div>
+          {{ end }}
+        </div>
+      {{ end }}
+    {{ end }}
+    <h2>Syllabus</h2>
+    {{ $chapters := slice }}
+    {{ range (.Pages.ByParam "order").ByParam "chapter" }}
+      {{ if .IsPage }}
+        {{ $chapters = $chapters | append .Params.chapter }}
+      {{ end }}
+    {{ end }}
+    {{ $pages := .Pages }}
+    {{ range uniq $chapters }}
+      {{ $chapter := . }}
+      <div class="syllabus__chapter">
+        <div class="syllabus__chapter__name">{{ . }}</div>
+        <div class="syllabus__chapter__posts">
+          {{ range ($pages.ByParam "order").ByParam "chapter" }}
+            {{ if and .IsPage (eq .Params.chapter $chapter) }}
+              <a class="chapter-item" href="{{ .RelPermalink }}">
+                <span class="chapter-item__title">{{ .Title }}</span><span class="chapter-item__reading-time">{{ .ReadingTime }}m</span>
+              </a>
+            {{ end }}
+          {{ end }}
+        </div>
+      </div>
+    {{ end }}
+    <div class="software">
+      {{ $supported_len := (len .Params.software.supported) }}
+      {{ $tested_len := (len .Params.software.tested) }}
+      <p>This series is valid for {{ range $index, $software := .Params.software.supported -}}
+        {{ $software.name }} v{{ $software.versionStart }} -
+        {{- if $software.versionEnd }} v{{- $software.versionEnd -}} {{- else }} current {{- end -}}
+        {{- if not (eq (add $index 1) $supported_len) -}}, {{ end -}}
+      {{ end }}. This series has been tested against {{ range $index, $software := .Params.software.tested -}}
+          {{ $software.name }} v{{ $software.version }}
+          {{- if not (eq (add $index 1) $tested_len) -}}, {{ end -}}
+        {{ end }}.</p>
+    </div>
+  </div>
+{{ end }}

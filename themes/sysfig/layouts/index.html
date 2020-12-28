@@ -1,0 +1,40 @@
+{{ define "main" }}
+    <p class="list-label">Posts</p>
+    <div class="list">
+        {{ range first 3 (where .Site.RegularPages.ByDate ".Dir" "posts/") }}
+          <div class="list-item">
+            <div class="list-item__meta">// <span class="list-item__meta__date">{{ .Date.Format "2 Jan 06" }}</span>
+              {{- if isset .Params "tags" -}}
+                {{- if gt (len .Params.tags) 0 }} &bullet; {{ range .Params.tags -}}
+                    <div class="tag"><a href="/tags/{{ . }}/">{{ . }}</a></div>
+                  {{- end -}}
+                {{- end -}}
+              {{- end -}}
+            </div>
+            <a class="list-item__title" href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </div>
+        {{ end }}
+        <a class="more" href="/posts/">
+          <span class="more__text">.... more</span><img class="more__arrow" src="/img/arrow.svg" />
+        </a>
+      </div>
+      <p class="list-label">Series</p>
+      <div class="list">
+        {{ range first 3 (where .Site.Pages.ByDate ".Type" "series") }}
+          <div class="list-item">
+            <div class="list-item__meta">// <span class="list-item__meta__date">{{ .Date.Format "2 Jan 06" }}</span>
+              {{- if isset .Params "tags" -}}
+                {{- if gt (len .Params.tags) 0 }} &bullet; {{ range .Params.tags -}}
+                    <div class="tag"><a href="/tags/{{ . }}/">{{ . }}</a></div>
+                  {{- end -}}
+                {{- end -}}
+              {{- end -}}
+            </div>
+            <a class="list-item__title" href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </div>
+        {{ end }}
+        <a class="more" href="/series/">
+          <span class="more__text">.... more</span><img class="more__arrow" src="/img/arrow.svg" />
+        </a>
+      </div>
+{{ end }}
