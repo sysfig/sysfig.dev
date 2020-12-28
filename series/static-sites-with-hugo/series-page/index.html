@@ -1,0 +1,95 @@
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Creating Series Page - sysfig</title><link rel=preconnect href=https://fonts.gstatic.com><link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel=stylesheet><link rel=stylesheet href=https://sysfig.dev/style.css></head><body><header><div id=menu-button></div><nav id=main-nav><a class=main-nav__link href=/series>Series</a>
+<a class=main-nav__link href=/posts>Posts</a>
+<a id=main-nav__home-link class=main-nav__link href=/><span id=header-text-logo>sysfig.dev</span><div id=header-logo class=logo></div></a><a class=main-nav__link href=/projects>Projects</a>
+<a class=main-nav__link href=/now>Now</a></nav></header><main><div class="single series-post"><h1 class=title>Creating Series Page</h1><div class=page-meta>// 15 Dec 20</div><div class=series-post-header>This post is part I4 of the series <a class=series-post-header__series-title href=/series/static-sites-with-hugo/>Generate Static Sites with Hugo</a>.</div><div class=content><p>Let&rsquo;s tackle our third constraint next - every series should have its own <em>series page</em> at <code>/series/&lt;series-name>/</code> and it should show a list of all posts that belong to it.</p><p>I&rsquo;d imagine a series page is going to look a lot different from a post page, with different kind of metadata, so let&rsquo;s create a new archetype for series. Create a new archetype at <code>archetypes/series.md</code> with the following content:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml>---
+<span style=color:#f92672>title</span>: {{ <span style=color:#ae81ff>replace .Name &#34;-&#34; &#34; &#34; | title }}</span>
+<span style=color:#f92672>date</span>: {{ <span style=color:#ae81ff>.Date }}</span>
+<span style=color:#f92672>description</span>:
+<span style=color:#f92672>prerequisites</span>:
+  <span style=color:#f92672>required</span>:
+    - <span style=color:#ae81ff>x</span>
+  <span style=color:#f92672>recommended</span>:
+    - <span style=color:#ae81ff>x</span>
+<span style=color:#f92672>learning-goals</span>:
+  - <span style=color:#ae81ff>x</span>
+<span style=color:#f92672>out-of-scope</span>:
+  - <span style=color:#ae81ff>x</span>
+<span style=color:#f92672>what-you-will-build</span>:
+  - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>x</span>
+    <span style=color:#f92672>description</span>: <span style=color:#ae81ff>x</span>
+    <span style=color:#f92672>image</span>: <span style=color:#ae81ff>/img/x.jpg</span>
+<span style=color:#f92672>software</span>:
+  <span style=color:#f92672>supported</span>:
+    - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>x</span>
+      <span style=color:#f92672>versionStart</span>: <span style=color:#ae81ff>0</span>
+      <span style=color:#f92672>versionEnd</span>: <span style=color:#ae81ff>1</span>
+  <span style=color:#f92672>tested</span>:
+    - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>x</span>
+      <span style=color:#f92672>version</span>: <span style=color:#ae81ff>1</span>
+<span style=color:#f92672>tags</span>:
+    - <span style=color:#ae81ff>web</span>
+    - <span style=color:#ae81ff>devops</span>
+    - <span style=color:#ae81ff>linux</span>
+    - <span style=color:#ae81ff>programming</span>
+<span style=color:#f92672>draft</span>: <span style=color:#66d9ef>true</span>
+---
+</code></pre></div><p><code>hugo new series/static-sites-with-hugo/_index.md</code></p><p>Because the target content file would be inside the <code>content/series/</code> directory, Hugo will automatically use the <code>series</code> archetype. Open the file and make changes to tailor it to your specific series.</p><p>We also need a new layout for this new content type. Create a new layout at <code>layouts/series/single.html</code> with the following content:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>{{ define &#34;main&#34; }}
+  &lt;<span style=color:#f92672>h1</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;title&#34;</span>&gt;{{ .Title }}&lt;/<span style=color:#f92672>h1</span>&gt;
+  &lt;<span style=color:#f92672>h2</span>&gt;About this Series&lt;/<span style=color:#f92672>h2</span>&gt;
+  &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;page-content&#34;</span>&gt;{{ .Content }}&lt;/<span style=color:#f92672>div</span>&gt;
+  &lt;<span style=color:#f92672>h2</span>&gt;Prerequisites&lt;/<span style=color:#f92672>h2</span>&gt;
+  &lt;<span style=color:#f92672>ul</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;prerequisites&#34;</span>&gt;
+    {{ range .Params.prerequisites.required }}
+      &lt;<span style=color:#f92672>li</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;prerequisites__required-item&#34;</span>&gt;{{ . }}&lt;/<span style=color:#f92672>li</span>&gt;
+    {{ end }}
+    {{ range .Params.prerequisites.recommended }}
+      &lt;<span style=color:#f92672>li</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;prerequisites__recommended-item&#34;</span>&gt;(optional) {{ . }}&lt;/<span style=color:#f92672>li</span>&gt;
+    {{ end }}
+  &lt;/<span style=color:#f92672>ul</span>&gt;
+  &lt;<span style=color:#f92672>h2</span>&gt;What You&#39;ll Learn&lt;/<span style=color:#f92672>h2</span>&gt;
+  &lt;<span style=color:#f92672>ul</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;learning-goals&#34;</span>&gt;
+    {{ range (index .Params &#34;learning-goals&#34;) }}
+      &lt;<span style=color:#f92672>li</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;learning-goals__item&#34;</span>&gt;{{ . }}&lt;/<span style=color:#f92672>li</span>&gt;
+    {{ end }}
+  &lt;/<span style=color:#f92672>ul</span>&gt;
+  &lt;<span style=color:#f92672>h2</span>&gt;What You&#39;ll Build&lt;/<span style=color:#f92672>h2</span>&gt;
+  &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;what-you-will-build&#34;</span>&gt;
+    {{ range (index .Params &#34;what-you-will-build&#34;) }}
+      &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;what-you-will-build__item&#34;</span>&gt;
+        &lt;<span style=color:#f92672>img</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;what-you-will-build__item__image&#34;</span> <span style=color:#a6e22e>src</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{{ .image }}&#34;</span> <span style=color:#a6e22e>alt</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;&#34;</span>&gt;
+        &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;what-you-will-build__item__name&#34;</span>&gt;{{ .name }}&lt;/<span style=color:#f92672>div</span>&gt;
+        &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;what-you-will-build__item__description&#34;</span>&gt;{{ .description }}&lt;/<span style=color:#f92672>div</span>&gt;
+      &lt;/<span style=color:#f92672>div</span>&gt;
+    {{ end }}
+  &lt;/<span style=color:#f92672>div</span>&gt;
+  &lt;<span style=color:#f92672>h2</span>&gt;Syllabus&lt;/<span style=color:#f92672>h2</span>&gt;
+  {{ range .Pages }}
+    {{ if .IsPage}}
+        &lt;<span style=color:#f92672>a</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;series-item&#34;</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{{ .RelPermalink }}&#34;</span>&gt;
+          &lt;<span style=color:#f92672>span</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;series-item__title&#34;</span>&gt;{{ .Title }}&lt;/<span style=color:#f92672>span</span>&gt;
+          &lt;<span style=color:#f92672>span</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;series-item__reading-time&#34;</span>&gt;{{ .ReadingTime }}m&lt;/<span style=color:#f92672>span</span>&gt;
+        &lt;/<span style=color:#f92672>a</span>&gt;
+    {{ end }}
+  {{ end }}
+  &lt;<span style=color:#f92672>h3</span>&gt;Software Used&lt;/<span style=color:#f92672>h3</span>&gt;
+  &lt;<span style=color:#f92672>p</span>&gt;This series should work for the following version ranges of software:&lt;/<span style=color:#f92672>p</span>&gt;
+  &lt;<span style=color:#f92672>ul</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;software__supported&#34;</span>&gt;
+    {{ range .Params.software.supported }}
+      &lt;<span style=color:#f92672>li</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;software__supported__item&#34;</span>&gt;{{ .name }} v{{ .versionStart }} - {{ if .versionEnd -}} v{{- .versionEnd -}} {{- else }} current {{- end -}}&lt;/<span style=color:#f92672>li</span>&gt;
+    {{ end }}
+  &lt;/<span style=color:#f92672>ul</span>&gt;
+  &lt;<span style=color:#f92672>p</span>&gt;This series has been tested against:&lt;/<span style=color:#f92672>p</span>&gt;
+  &lt;<span style=color:#f92672>ul</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;software__tested&#34;</span>&gt;
+    {{ range .Params.software.tested }}
+      &lt;<span style=color:#f92672>li</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;software__tested__item&#34;</span>&gt;{{ .name }} v{{ .version }}&lt;/<span style=color:#f92672>li</span>&gt;
+    {{ end }}
+  &lt;/<span style=color:#f92672>ul</span>&gt;
+  &lt;<span style=color:#f92672>h3</span>&gt;What&#39;s Out of Scope&lt;/<span style=color:#f92672>h3</span>&gt;
+  &lt;<span style=color:#f92672>ul</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;out-of-scope&#34;</span>&gt;
+    {{ range (index .Params &#34;out-of-scope&#34;) }}
+      &lt;<span style=color:#f92672>li</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;out-of-scope__item&#34;</span>&gt;{{ . }}&lt;/<span style=color:#f92672>li</span>&gt;
+    {{ end }}
+  &lt;/<span style=color:#f92672>ul</span>&gt;
+{{ end }}
+</code></pre></div><p>Now, if you go to <code>http://localhost:1313/series/static-sites-with-hugo</code> you&rsquo;ll see this:</p><p><img src=/img/series-page.png alt></p><p>We can now check the third constraint off our list.</p></div><div id=series-navigation><a class=prev href=/series/static-sites-with-hugo/cascading-content-type/><div class=prev-button><img class=prev__arrow src=/img/arrow.svg><span class=prev__text>Prev</span></div><div class=prev__title><div class=chapter-order>I3</div><div class=prev__title__text>Cascading Content Type</div></div></a><a class=next href=/series/static-sites-with-hugo/custom-filename-conventions/><div class=next-button><span class=next__text>Next</span><img class=next__arrow src=/img/arrow.svg></div><div class=next__title><div class=prev__title__text>Implementing Custom Filename Conventions</div><div class=chapter-order>I5</div></div></div></div></main><footer><a href=/><div id=footer-logo-group><div id=footer-logo-base-rect></div><div id=footer-logo-base-circle></div><div id=footer-logo class=logo></div><div id=footer-text><span class=text-logo>sysfig.dev</span>
+<span class=copyright>2020</span></div></div></a><div id=footer-about>I am a programmer and DevOps engineer on a quest to make education more accessible for all. <span class=text-logo>sysfig.dev</span> is an outlet for me to share my knowledge on the web, and also to showcase my projects.</div></footer><script src=/js/main.js></script></body></html>

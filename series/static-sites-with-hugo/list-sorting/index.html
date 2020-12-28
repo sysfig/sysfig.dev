@@ -1,0 +1,28 @@
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Understanding Sorting in Lists - sysfig</title><link rel=preconnect href=https://fonts.gstatic.com><link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel=stylesheet><link rel=stylesheet href=https://sysfig.dev/style.css></head><body><header><div id=menu-button></div><nav id=main-nav><a class=main-nav__link href=/series>Series</a>
+<a class=main-nav__link href=/posts>Posts</a>
+<a id=main-nav__home-link class=main-nav__link href=/><span id=header-text-logo>sysfig.dev</span><div id=header-logo class=logo></div></a><a class=main-nav__link href=/projects>Projects</a>
+<a class=main-nav__link href=/now>Now</a></nav></header><main><div class="single series-post"><h1 class=title>Understanding Sorting in Lists</h1><div class=page-meta>// 15 Dec 20</div><div class=series-post-header>This post is part G1 of the series <a class=series-post-header__series-title href=/series/static-sites-with-hugo/>Generate Static Sites with Hugo</a>.</div><div class=content><p>Currently, we only have a single post in our section list page. But what order will posts appear in when we add more? Ideally, we want our posts to be sorted in reverse chronological order, so that the latest posts appear first.</p><p>First, let&rsquo;s create a new post with a different date.</p><pre><code>hugo new posts/what-is-a-mac-address.md
+</code></pre><p>Once again, the content file will be generated from the <code>posts</code> archetype.</p><pre><code>---
+title: &quot;What Is a Mac Address&quot;
+date: 2020-12-13T16:26:35-08:00
+draft: true
+tags:
+    - web
+    - devops
+    - linux
+    - programming
+---
+</code></pre><p>Open the content file, add in some dummy content, and modify the front matter, ensuring the <code>date</code> front matter variable uses a different date to our other article.</p><pre><code>---
+title: &quot;What is a MAC Address?&quot;
+date: 2020-12-13T16:26:35-08:00
+draft: false
+tags:
+    - web
+    - networking
+---
+
+## Inquit laudemque altissima mirere cum dixit ducere
+
+Lorem markdownum Clymenen. Ista sunt gestare audet, ante, ne delicuit fluctus...
+</code></pre><p>If we return to the <code>/posts/</code> page, we can see that Hugo has already sorted the posts by date.</p><p><img src=posts-list-two-posts.png alt></p><p>This is because Hugo uses some defaults on how it <a href=https://gohugo.io/templates/lists/#order-content>orders list items</a>. It will try to sort by date (reverse chronologically), then if the date is exactly the same, then by link title (alphabetically), then file path (alphabetically).</p><p>You can make it more explicit by writing {{ range .Pages.ByDate.Reverse }} instead.</p><p>You can also override the sort order by giving each page a numeric, non-zero <em>weight</em> (via the <code>weight</code> front matter), where the page with the lower weight is ordered first. If the weights of two posts are the same, then Hugo will revert to sorting by date, title, and path.</p></div><div id=series-navigation><a class=prev href=/series/static-sites-with-hugo/posts-list-layout/><div class=prev-button><img class=prev__arrow src=/img/arrow.svg><span class=prev__text>Prev</span></div><div class=prev__title><div class=chapter-order>G0</div><div class=prev__title__text>Adding Posts List Layout</div></div></a><a class=next href=/series/static-sites-with-hugo/adding-content-to-section-list-pages/><div class=next-button><span class=next__text>Next</span><img class=next__arrow src=/img/arrow.svg></div><div class=next__title><div class=prev__title__text>Adding Content to Section List Pages</div><div class=chapter-order>G2</div></div></div></div></main><footer><a href=/><div id=footer-logo-group><div id=footer-logo-base-rect></div><div id=footer-logo-base-circle></div><div id=footer-logo class=logo></div><div id=footer-text><span class=text-logo>sysfig.dev</span>
+<span class=copyright>2020</span></div></div></a><div id=footer-about>I am a programmer and DevOps engineer on a quest to make education more accessible for all. <span class=text-logo>sysfig.dev</span> is an outlet for me to share my knowledge on the web, and also to showcase my projects.</div></footer><script src=/js/main.js></script></body></html>

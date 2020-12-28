@@ -1,0 +1,27 @@
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Previewing the Site with the Development Server - sysfig</title><link rel=preconnect href=https://fonts.gstatic.com><link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel=stylesheet><link rel=stylesheet href=https://sysfig.dev/style.css></head><body><header><div id=menu-button></div><nav id=main-nav><a class=main-nav__link href=/series>Series</a>
+<a class=main-nav__link href=/posts>Posts</a>
+<a id=main-nav__home-link class=main-nav__link href=/><span id=header-text-logo>sysfig.dev</span><div id=header-logo class=logo></div></a><a class=main-nav__link href=/projects>Projects</a>
+<a class=main-nav__link href=/now>Now</a></nav></header><main><div class="single series-post"><h1 class=title>Previewing the Site with the Development Server</h1><div class=page-meta>// 15 Dec 20</div><div class=series-post-header>This post is part C5 of the series <a class=series-post-header__series-title href=/series/static-sites-with-hugo/>Generate Static Sites with Hugo</a>.</div><div class=content><p>It&rsquo;s not possible to serve our site by running a web server (like NGINX or Apache HTTP server) with <code>public/</code> as the site root. However, running a web server in the background and re-running <code>hugo</code> on every change can tiresome.</p><p>Hugo provides a fast development server that will watch for changes in your code, automatically rebuild the site, store the result in memory, and server it at the local host address (defaults to port <code>1313</code>). It also has a hot-reload feature, where it will inject some code into web page that&rsquo;ll allow the page to update itself without refreshing whenever the code changes. Generally, when developing a Hugo site, you should use this development server.</p><p>Start the development server by running <code>hugo server</code>.</p><pre><code>hugo server
+</code></pre><pre><code>Start building sites …
+
+                   | EN  
+-------------------+-----
+  Pages            |  4  
+  Paginator pages  |  0  
+  Non-page files   |  0  
+  Static files     |  0  
+  Processed images |  0  
+  Aliases          |  0  
+  Sitemaps         |  1  
+  Cleaned          |  0  
+
+Built in 2 ms
+Watching for changes in /Users/sysfig/projects/sysfig.dev/{archetypes,content,data,layouts,static}
+Watching for config changes in /Users/sysfig/projects/sysfig.dev/config.yaml
+Environment: &quot;development&quot;
+Serving pages from memory
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Press Ctrl+C to stop
+</code></pre><p>Our site is now available to view at http://localhost:1313/.</p><p><img src=/img/hello-world-home-page-color.png alt></p><p>Although it&rsquo;s not a very useful home page, this &lsquo;Hello World&rsquo; exercise has taught you how Hugo works and how content and layouts come together to form the page.</p></div><div id=series-navigation><a class=prev href=/series/static-sites-with-hugo/generating-static-site/><div class=prev-button><img class=prev__arrow src=/img/arrow.svg><span class=prev__text>Prev</span></div><div class=prev__title><div class=chapter-order>C4</div><div class=prev__title__text>Generating the Static Site</div></div></a><a class=next href=/series/static-sites-with-hugo/creating-about-page/><div class=next-button><span class=next__text>Next</span><img class=next__arrow src=/img/arrow.svg></div><div class=next__title><div class=prev__title__text>Creating an About Page</div><div class=chapter-order>D0</div></div></div></div></main><footer><a href=/><div id=footer-logo-group><div id=footer-logo-base-rect></div><div id=footer-logo-base-circle></div><div id=footer-logo class=logo></div><div id=footer-text><span class=text-logo>sysfig.dev</span>
+<span class=copyright>2020</span></div></div></a><div id=footer-about>I am a programmer and DevOps engineer on a quest to make education more accessible for all. <span class=text-logo>sysfig.dev</span> is an outlet for me to share my knowledge on the web, and also to showcase my projects.</div></footer><script src=/js/main.js></script></body></html>
