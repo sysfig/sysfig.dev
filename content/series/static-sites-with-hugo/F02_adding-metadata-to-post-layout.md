@@ -4,6 +4,7 @@ slug: post-page-metadata
 date: 2020-12-15T16:07:02-08:00
 chapter: f
 order: 2
+draft: true
 ---
 
 The post page uses the `layouts/_default/single.html` page, which displays only the title and content. Some information from the post is lost, such as the date and tags.

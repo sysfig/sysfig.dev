@@ -4,6 +4,7 @@ slug: posts-list-layout
 date: 2020-12-15T16:07:31-08:00
 chapter: g
 order: 0
+draft: true
 ---
 
 We can reach individual posts by going to `http://localhost:1313/posts/<name>` but what if want to see a list of all posts? If you try `http://localhost:1313/posts/`, you'll be served a blank page because there is no content file or layout file for the section list page (`layouts/index.html` only works for the home page and `layouts/_default/single.html` only works for single pages).

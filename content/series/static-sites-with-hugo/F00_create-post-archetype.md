@@ -4,6 +4,7 @@ slug: posts-archetypes
 date: 2020-12-15T16:05:54-08:00
 chapter: f
 order: 0
+draft: true
 ---
 
 We should create an archetype for posts because we want all our posts to have the same set of fields in the front matter. Create a new archetype at `archetypes/posts.md` with the following content:

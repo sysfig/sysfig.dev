@@ -4,6 +4,7 @@ slug: taxonomies
 date: 2020-12-15T16:08:54-08:00
 chapter: h
 order: 0
+draft: true
 ---
 
 We are now able to display a single blog post as well as a listing of blog posts. But what if I am only interested in blog posts about the web? Would I be able to only get a listing of posts with the `web` tag?

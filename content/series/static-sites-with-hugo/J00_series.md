@@ -4,6 +4,7 @@ slug: series
 date: 2020-12-15T10:34:49-08:00
 chapter: i
 order: 0
+draft: true
 ---
 
 The term 'series' may have different meanings on different sites or blog, but for this blog, a series is an ordered selection of posts.

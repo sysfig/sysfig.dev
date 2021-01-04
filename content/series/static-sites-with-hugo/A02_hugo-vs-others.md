@@ -7,6 +7,7 @@ order: 2
 tags:
     - web
     - hugo
+draft: true
 ---
 
 This book is about Hugo. But Hugo is not the only static site generator out there. So what makes Hugo so different? Before we go into that, let's first talk about the features you can expect from _any_ decent static site generators:

@@ -4,6 +4,7 @@ slug: cascading-content-type
 date: 2020-12-15T20:49:54-08:00
 chapter: i
 order: 3
+draft: true
 ---
 
 We could manually add `type: posts` to the archetype but this makes maintainance difficult - imagine if we want to change the type for thousands of series pages (even though we could do a directory-global find-and-replace, it'll look real bad when doing code reviews).

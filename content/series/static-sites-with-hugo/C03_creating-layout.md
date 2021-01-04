@@ -4,6 +4,7 @@ slug: creating-layout
 date: 2020-12-14T21:10:57-08:00
 chapter: c
 order: 3
+draft: true
 ---
 
 After Hugo has parsed your content file, it will then try to match the content with a layout from the `layouts/` directory.

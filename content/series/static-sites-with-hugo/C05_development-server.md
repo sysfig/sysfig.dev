@@ -4,6 +4,7 @@ slug: previewing-site-with-development-server
 date: 2020-12-15T15:24:24-08:00
 chapter: c
 order: 5
+draft: true
 ---
 
 It's not possible to serve our site by running a web server (like NGINX or Apache HTTP server) with `public/` as the site root. However, running a web server in the background and re-running `hugo` on every change can tiresome.

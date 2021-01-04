@@ -4,6 +4,7 @@ slug: generating-a-project-scaffold
 date: 2020-12-14T17:52:52-08:00
 chapter: b
 order: 0
+draft: true
 ---
 
 Let's create a scaffold for a new site using the `hugo new site <path>` command.

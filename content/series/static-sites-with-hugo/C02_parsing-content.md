@@ -4,6 +4,7 @@ slug: parsing-content
 date: 2020-12-14T20:23:25-08:00
 chapter: c
 order: 2
+draft: true
 ---
 
 For any file that is not HTML, Hugo uses a parser to parse the content and convert it to HTML. For Hugo to be able to parse your content, you must use a supported content format (like Markdown). Hugo supports content written in Markdown or HTML out-of-the-box. Additional content formats are supported with the installation of additional tools on your machine (Hugo calls these tools _external helpers_).

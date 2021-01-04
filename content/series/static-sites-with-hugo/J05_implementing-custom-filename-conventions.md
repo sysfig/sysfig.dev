@@ -4,6 +4,7 @@ slug: custom-filename-conventions
 date: 2020-12-15T11:02:02-08:00
 chapter: i
 order: 5
+draft: true
 ---
 
 Currently, the series posts are sorted alphabetically in my editor by their filenames, whilst on the site, they are sorted by date.

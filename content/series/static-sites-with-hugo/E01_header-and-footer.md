@@ -4,6 +4,7 @@ slug: header-footer-partials
 date: 2020-12-15T16:04:49-08:00
 chapter: e
 order: 1
+draft: true
 ---
 
 Let's take our `layouts/index.html`.

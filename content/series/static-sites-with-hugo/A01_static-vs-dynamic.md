@@ -9,6 +9,7 @@ tags:
     - hugo
     - wordpress
     - ghost
+draft: true
 ---
 
 Some open-source blogging software like [WordPress](https://wordpress.org/) and [Ghost](https://ghost.org/) store post data (content and metadata) as database entries, and retrieve them _dynamically_ at the time clients request them. For example, if a visitor navigates to a post on a Ghost blog using the URL `https://blog.example.com/explaining-dns`, the Ghost backend would take the path (`/explaining-dns`) and try to match it to an entry in the database. Once found, it will either return the post data to the front-end to display, or generate the HTML page server-side and respond with the dynamically-generated HTML page.

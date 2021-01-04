@@ -4,6 +4,7 @@ slug: config-toml
 date: 2020-12-14T20:20:48-08:00
 chapter: b
 order: 1
+draft: true
 ---
 
 To start off, we have the `config.toml` configuration file.

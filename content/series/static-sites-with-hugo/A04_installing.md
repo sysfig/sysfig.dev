@@ -4,6 +4,7 @@ slug: installing-hugo
 date: 2020-12-14T17:52:37-08:00
 chapter: a
 order: 4
+draft: true
 ---
 
 Hugo comes in two versions - regular and extended. The extended version provides support for:

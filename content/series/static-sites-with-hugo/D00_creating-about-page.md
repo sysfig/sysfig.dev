@@ -4,6 +4,7 @@ slug: creating-about-page
 date: 2020-12-15T15:24:46-08:00
 chapter: d
 order: 0
+draft: true
 ---
 
 We'll soon polish up the home page by adding some styling and _pazazz_ to it. But before that, let's finish up laying out the structure of our site by adding more pages to the site. We'll start with the 'About' page.

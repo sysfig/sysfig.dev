@@ -4,6 +4,7 @@ slug: adding-styles-with-sass
 date: 2020-12-16T15:24:30-08:00
 chapter: h
 order: 0
+draft: true
 ---
 
 We have a working site, but it's not very pretty nor user-friendly. What it needs is some styles to keep the elements aligned and organized.

@@ -4,6 +4,7 @@ slug: hugo-lookup-order
 date: 2020-12-15T15:27:30-08:00
 chapter: d
 order: 3
+draft: true
 ---
 
 Circling back to creating our About page, we need to create a layout file that can match with the `content/about.md` content file. We need to create that file at a location that satisfies Hugo's layout lookup rules. You can find the full lookup order at [_Hugo's Lookup Order_](https://gohugo.io/templates/lookup-order/), but the abridged version can be summed up as:

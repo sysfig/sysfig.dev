@@ -4,6 +4,7 @@ slug: generating-static-site
 date: 2020-12-15T15:23:55-08:00
 chapter: c
 order: 4
+draft: true
 ---
 
 With the `layouts/index.html` and `content/_index.md` files in place, we are now ready to combine them to create the home page. At the root of your repository, run `hugo`.

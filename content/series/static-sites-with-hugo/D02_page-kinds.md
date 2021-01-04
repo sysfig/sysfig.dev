@@ -4,6 +4,7 @@ slug: page-kinds
 date: 2020-12-15T15:25:25-08:00
 chapter: d
 order: 2
+draft: true
 ---
 
 But what happens when a user hits the URL `<host>/posts/`? Typically, this page would be a chronological  index/listing of all posts on the site. Hugo makes a distinction between these _kinds_ of _list pages_ as opposed to the regular _single page_ (e.g. About, Terms, or a blog post).

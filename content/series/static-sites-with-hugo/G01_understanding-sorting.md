@@ -4,6 +4,7 @@ slug: list-sorting
 date: 2020-12-15T16:07:57-08:00
 chapter: g
 order: 1
+draft: true
 ---
 
 Currently, we only have a single post in our section list page. But what order will posts appear in when we add more? Ideally, we want our posts to be sorted in reverse chronological order, so that the latest posts appear first.

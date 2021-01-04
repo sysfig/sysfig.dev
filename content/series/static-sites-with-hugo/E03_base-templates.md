@@ -4,6 +4,7 @@ slug: base-templates-blocks
 date: 2020-12-15T16:05:18-08:00
 chapter: e
 order: 3
+draft: true
 ---
 
 We've componentized most of the layouts into partials, but the layout themselves look almost identical to each other.

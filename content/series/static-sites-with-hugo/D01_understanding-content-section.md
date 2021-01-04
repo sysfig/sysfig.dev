@@ -4,6 +4,7 @@ slug: understanding-content-section
 date: 2020-12-15T15:27:41-08:00
 chapter: d
 order: 1
+draft: true
 ---
 
 A [_section_](https://gohugo.io/content-management/sections/ in Hugo is a collection of content pages grouped by directory structure. For example, if we have a directory at `content/posts/`, then `posts` would be a section. First-level directories under `content/` are called _root sections_.

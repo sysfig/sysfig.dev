@@ -4,6 +4,7 @@ slug: head-partial
 date: 2020-12-15T16:04:24-08:00
 chapter: e
 order: 2
+draft: true
 ---
 
 Next, let's extract the `<head>` element from both layouts into its own partial. This is slightly more complicated than with the header and footer because the `<title>` element within the `<head>` is different for different layouts. With `layouts/index.html`, it's `<title>{{ .Site.Title }}</title>`; with `layouts/_default/single.html`, it's `<title>{{ .Title }} - {{ .Site.Title }}</title>`.

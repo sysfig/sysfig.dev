@@ -4,6 +4,7 @@ slug: linking-tag-pages
 date: 2020-12-15T16:10:37-08:00
 chapter: h
 order: 2
+draft: true
 ---
 
 Now we that there is a taxonomy term listing page for for each tag, let's go back to our list and single page layouts and add links to them.

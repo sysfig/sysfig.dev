@@ -4,6 +4,7 @@ slug: series-page
 date: 2020-12-15T21:24:44-08:00
 chapter: i
 order: 4
+draft: true
 ---
 
 Let's tackle our third constraint next - every series should have its own _series page_ at `/series/<series-name>/` and it should show a list of all posts that belong to it.

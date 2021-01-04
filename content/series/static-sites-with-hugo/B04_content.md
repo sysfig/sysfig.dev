@@ -4,6 +4,7 @@ slug: content
 date: 2020-12-14T20:21:14-08:00
 chapter: b
 order: 4
+draft: true
 ---
 
 Whilst the `layouts/` directory houses _HTML_ elements that can be reused across multiple web pages, the `content/` directory houses content that are unique for that page. Examples include the content of an 'About Us' page, or the content of a blog post.

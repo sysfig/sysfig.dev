@@ -4,6 +4,7 @@ slug: themes
 date: 2020-12-14T20:22:17-08:00
 chapter: b
 order: 7
+draft: true
 ---
 
 Instead of creating all your layouts, CSS files, icon sets, archetypes, etc. from scratch, you can download _themes_ from [themes.gohugo.io](https://themes.gohugo.io/). You can also create your own theme.

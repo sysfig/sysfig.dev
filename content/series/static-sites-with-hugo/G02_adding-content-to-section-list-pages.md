@@ -4,6 +4,7 @@ slug: adding-content-to-section-list-pages
 date: 2020-12-15T16:08:36-08:00
 chapter: g
 order: 2
+draft: true
 ---
 
 Remember that `_index.md` is the name of the content file for page with an empty path; so to add some free form content to the `/posts/` list page, we can create a new content file at `content/posts/_index.md` with the following disclaimer.

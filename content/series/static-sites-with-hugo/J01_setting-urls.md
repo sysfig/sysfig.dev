@@ -4,6 +4,7 @@ slug: setting-urls
 date: 2020-12-15T16:52:29-08:00
 chapter: i
 order: 1
+draft: true
 ---
 
 There are multiple ways to fulfil our first constraint - Posts within a series should have the URL path `/series/<series-name>/<post-slug>`:

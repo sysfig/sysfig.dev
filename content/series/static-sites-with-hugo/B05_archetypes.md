@@ -4,6 +4,7 @@ slug: archetypes
 date: 2020-12-14T20:21:32-08:00
 chapter: b
 order: 5
+draft: true
 ---
 
 Chances are, your website or blog would have a limited number of content types. For a professional blog, you may have tutorials, opinion/discussion/analysis posts, announcements, etc. For a personal blog, it may be photography, food, travel, etc.

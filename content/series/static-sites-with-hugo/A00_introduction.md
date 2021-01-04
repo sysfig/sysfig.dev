@@ -7,6 +7,7 @@ order: 0
 tags:
     - web
     - hugo
+draft: true
 ---
 
 [Hugo](https://gohugo.io/) is an open-source static site generator.

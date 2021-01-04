@@ -53,7 +53,7 @@
     <h2>Syllabus</h2>
     {{ $chapters := slice }}
     {{ range (.Pages.ByParam "order").ByParam "chapter" }}
-      {{ if .IsPage }}
+      {{ if and .IsPage .Params.chapter }}
         {{ $chapters = $chapters | append .Params.chapter }}
       {{ end }}
     {{ end }}

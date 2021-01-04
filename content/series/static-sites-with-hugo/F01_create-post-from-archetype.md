@@ -4,6 +4,7 @@ slug: post-from-archetypes
 date: 2020-12-15T16:06:19-08:00
 chapter: f
 order: 1
+draft: true
 ---
 
 Let's create a our first post about password hashing. You can do that by running `hugo new posts/what-is-password-hashing.md`. Because the path starts with `posts/`, Hugo will know to use the `posts` archetype.

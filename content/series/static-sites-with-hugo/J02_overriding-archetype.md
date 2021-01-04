@@ -4,6 +4,7 @@ slug: overriding-archetype
 date: 2020-12-15T20:51:16-08:00
 chapter: i
 order: 2
+draft: true
 ---
 
 With picking the right archetype, we can use the `--kind` option to specify the content type to create.

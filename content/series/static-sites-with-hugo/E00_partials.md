@@ -4,6 +4,7 @@ slug: partials
 date: 2020-12-15T15:28:03-08:00
 chapter: e
 order: 0
+draft: true
 ---
 
 Now that our home and About pages are working, let's do some refactoring and remove duplication from our code.

@@ -4,6 +4,7 @@ slug: taxonomy-use-cases
 date: 2020-12-15T16:11:04-08:00
 chapter: h
 order: 3
+draft: true
 ---
 
 We are only using one taxonomy here (`tags`), so let's update our site configuration (`config.yaml`) to make that explicit.

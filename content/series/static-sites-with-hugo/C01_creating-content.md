@@ -4,6 +4,7 @@ slug: creating-content
 date: 2020-12-14T20:23:00-08:00
 chapter: c
 order: 1
+draft: true
 ---
 
 Next, we are going to create some content to put on our home page. The content goes in the `content/` directory and the name of the file will become the path on the final site. For example, if we add an `content/about.md` file, then a page at `/about` will be created.

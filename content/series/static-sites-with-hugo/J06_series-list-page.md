@@ -4,6 +4,7 @@ slug: series-list-page
 date: 2020-12-16T14:44:02-08:00
 chapter: i
 order: 6
+draft: true
 ---
 
 Our fifth constraint is that '`/series/` should list out a list of series pages, but not the series posts'. So let's create a layout for list pages within the `series` section.

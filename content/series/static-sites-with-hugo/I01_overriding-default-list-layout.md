@@ -4,6 +4,7 @@ slug: overriding-default-list-layout
 date: 2020-12-15T16:09:29-08:00
 chapter: h
 order: 1
+draft: true
 ---
 
 We can also go to the taxonomy list page (i.e. `/tags/`) to see a list of all tags, but it doesn't look quite right. It's also using the `layouts/_default/list.html` layout, but that layout is meant for posts, not tags (or any type of taxonomy terms), so let's create a more specific layout for our tags.

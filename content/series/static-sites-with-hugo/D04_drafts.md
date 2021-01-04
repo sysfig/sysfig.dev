@@ -4,6 +4,7 @@ slug: drafts
 date: 2020-12-15T15:27:30-08:00
 chapter: d
 order: 4
+draft: true
 ---
 
 Start the Hugo development server by running `hugo server` and go to `http://localhost:1313/about/`. Contrary to our expectations, it's displaying a page that reads `404 page not found`. So what's wrong?
