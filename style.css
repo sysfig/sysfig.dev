@@ -406,15 +406,17 @@ header {
   text-decoration: underline; }
 
 #series-navigation {
-  display: flex;
-  justify-content: space-between; }
+  display: grid;
+  grid-template-columns: auto auto; }
   #series-navigation a.next, #series-navigation a.prev {
     max-width: 48%;
     word-wrap: break-word; }
   #series-navigation a.next {
-    text-align: right; }
+    text-align: right;
+    justify-self: right; }
   #series-navigation a.prev {
-    text-align: left; }
+    text-align: left;
+    justify-self: left; }
   #series-navigation .next-button, #series-navigation .prev-button {
     height: 32px;
     background-color: var(--blue);
@@ -574,3 +576,7 @@ ul {
 
 .title {
   margin-top: 48px; }
+
+.separator {
+  margin-left: 0.5em;
+  margin-right: 0.5em; }
