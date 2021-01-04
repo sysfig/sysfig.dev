@@ -74,16 +74,20 @@
       </div>
     {{ end }}
     <div class="software">
-      {{ $supported_len := (len .Params.software.supported) }}
-      {{ $tested_len := (len .Params.software.tested) }}
-      <p>This series is valid for {{ range $index, $software := .Params.software.supported -}}
-        {{ $software.name }} v{{ $software.versionStart }} -
-        {{- if $software.versionEnd }} v{{- $software.versionEnd -}} {{- else }} current {{- end -}}
-        {{- if not (eq (add $index 1) $supported_len) -}}, {{ end -}}
-      {{ end }}. This series has been tested against {{ range $index, $software := .Params.software.tested -}}
+      {{- $supported_len := (len .Params.software.supported) -}}
+      {{- $tested_len := (len .Params.software.tested) -}}
+      <p>{{- if gt $supported_len 0 -}}
+        This series is valid for {{ range $index, $software := .Params.software.supported -}}
+          {{ $software.name }} v{{ $software.versionStart }} -
+          {{- if $software.versionEnd }} v{{- $software.versionEnd -}} {{- else }} current {{- end -}}
+          {{- if not (eq (add $index 1) $supported_len) -}}, {{ end -}}
+        {{- end -}}.
+      {{- end -}}
+      {{- if gt $tested_len 0 }} This series has been tested against {{ range $index, $software := .Params.software.tested -}}
           {{ $software.name }} v{{ $software.version }}
           {{- if not (eq (add $index 1) $tested_len) -}}, {{ end -}}
-        {{ end }}.</p>
+        {{ end }}.
+      {{- end -}}</p>
     </div>
   </div>
 {{ end }}

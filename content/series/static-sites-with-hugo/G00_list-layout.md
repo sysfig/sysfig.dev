@@ -17,7 +17,7 @@ We can create a list layout at `layouts/_default/list.html` that acts as the def
   <div class="page-content">{{ .Content }}</div>
   {{ range .Pages }}
     <div class="post-list-item">
-      <div class="post-list-item__meta">// {{ .Date.Format "2 Jan 06" }} &bullet; {{ range .Params.tags }}
+      <div class="post-list-item__meta">// {{ .Date.Format "2 Jan 06" -}}<span class="separator">&bullet;</span>{{- range .Params.tags }}
           <div class="tag">{{ . }}</div>
         {{ end }}
       </div>

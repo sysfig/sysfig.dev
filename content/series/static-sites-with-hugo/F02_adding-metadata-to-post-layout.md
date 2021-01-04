@@ -14,7 +14,7 @@ So let's create a more specific layout for single pages in the `posts` section b
 ```html
 {{ define "main" }}
     <h1 class="title">{{ .Title }}</h1>
-    <div class="post__meta">// {{ .Date.Format "2 Jan 06" }} &bullet; {{ range .Params.tags }}
+    <div class="post__meta">// {{ .Date.Format "2 Jan 06" -}}<span class="separator">&bullet;</span>{{- range .Params.tags }}
         <div class="tag">{{ . }}</div>
       {{ end }}
     </div>

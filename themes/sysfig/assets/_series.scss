@@ -166,8 +166,8 @@
 }
 
 #series-navigation {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto auto;
 
   a.next, a.prev {
     max-width: 48%;
@@ -176,10 +176,12 @@
 
   a.next {
     text-align: right;
+    justify-self: right;
   }
 
   a.prev {
     text-align: left;
+    justify-self: left;
   }
 
   .next-button, .prev-button {

@@ -3,7 +3,7 @@
     <h1 class="title">{{ .Title }}</h1>
     <div class="page-meta">// {{ .Date.Format "2 Jan 06" -}}
       {{- if isset .Params "tags" -}}
-        {{- if gt (len .Params.tags) 0 }} &bullet; {{ range .Params.tags -}}
+        {{- if gt (len .Params.tags) 0 -}}<span class="separator">&bullet;</span>{{- range .Params.tags -}}
           <div class="tag"><a href="/tags/{{ . }}/">{{ . }}</a></div>
           {{- end -}}
         {{- end -}}
@@ -12,27 +12,32 @@
     <div class="series-post-header">This post is part {{ .Params.chapter | upper }}{{ .Params.order | upper }} of the series {{ with .GetPage .Dir }}<a class="series-post-header__series-title" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}.</div>
     <div class="content">{{ .Content }}</div>
     <div id="series-navigation">
-      <a class="prev" href="{{- with (((where .Site.RegularPages ".Dir" .Dir ).ByParam "order").ByParam "chapter").Next . -}}
-          {{- .RelPermalink -}}
-      {{- end -}}">
-        <div class="prev-button">
-          <img class="prev__arrow" src="/img/arrow.svg" /><span class="prev__text">Prev</span>
-        </div>
-        <div class="prev__title">{{- with (((where .Site.RegularPages ".Dir" .Dir ).ByParam "order").ByParam "chapter").Next . -}}
-          <div class="chapter-order">{{- .Params.chapter | upper }}{{ .Params.order | upper }}</div>
-          <div class="prev__title__text">{{ .Title -}}</div>
-        {{- end -}}</div>
-      </a>
-      <a class="next" href="{{- with (((where .Site.RegularPages ".Dir" .Dir ).ByParam "order").ByParam "chapter").Prev . -}}
-        {{- .RelPermalink -}}
-      {{- end -}}">
-        <div class="next-button">
-          <span class="next__text">Next</span><img class="next__arrow" src="/img/arrow.svg" />
-        </div>
-        <div class="next__title">{{- with (((where .Site.RegularPages ".Dir" .Dir ).ByParam "order").ByParam "chapter").Prev . -}}
-          <div class="prev__title__text">{{ .Title -}}</div>
-          <div class="chapter-order">{{ .Params.chapter | upper }}{{ .Params.order | upper }}</div>
-        {{- end -}}</div>
+      {{- with (((where .Site.RegularPages ".Dir" .Dir ).ByParam "order").ByParam "chapter").Next . -}}
+        <a class="prev" href="{{- .RelPermalink -}}">
+          <div class="prev-button">
+            <img class="prev__arrow" src="/img/arrow.svg" /><span class="prev__text">Prev</span>
+          </div>
+          <div class="prev__title">
+            <div class="chapter-order">{{- .Params.chapter | upper }}{{ .Params.order | upper }}</div>
+            <div class="prev__title__text">{{ .Title -}}</div>
+          </div>
+        </a>
+        {{- else -}}
+        <div></div>
+      {{- end -}}
+      {{- with (((where .Site.RegularPages ".Dir" .Dir ).ByParam "order").ByParam "chapter").Prev . -}}
+        <a class="next" href="{{- .RelPermalink -}}">
+          <div class="next-button">
+            <span class="next__text">Next</span><img class="next__arrow" src="/img/arrow.svg" />
+          </div>
+          <div class="next__title">
+            <div class="prev__title__text">{{ .Title -}}</div>
+            <div class="chapter-order">{{ .Params.chapter | upper }}{{ .Params.order | upper }}</div>
+          </div>
+        </a>
+      {{- else -}}
+        <div></div>
+      {{- end -}}
     </div>
   </div>
 {{ end }}

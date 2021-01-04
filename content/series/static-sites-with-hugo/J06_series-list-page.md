@@ -16,7 +16,7 @@ Our fifth constraint is that '`/series/` should list out a list of series pages,
   {{ range .Pages }}
     {{ if and .IsSection (not (eq .CurrentSection.Title "Series")) }}
       <div class="series-list-item">
-        <div class="series-list-item__meta">// {{ .Date.Format "2 Jan 06" }} &bullet; {{ range .Params.tags }}
+        <div class="series-list-item__meta">// {{ .Date.Format "2 Jan 06" -}}<span class="separator">&bullet;</span>{{- range .Params.tags }}
             <div class="tag"><a href="/tags/{{ . }}/">{{ . }}</a></div>
             {{ end }}
         </div>
