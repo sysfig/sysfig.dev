@@ -1,3 +1,14 @@
+---
+title: Building an Echo Server with Go
+slug: go-echo-server
+date: 2021-01-27T17:46:37-08:00
+chapter: a
+order: 0
+tags:
+    - golang
+    - memory
+---
+
 The application we are building is called Acme, so let's start by creating a project directory named `acme`.
 
 ```console
