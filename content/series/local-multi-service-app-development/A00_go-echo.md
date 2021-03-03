@@ -7,6 +7,7 @@ order: 0
 tags:
     - golang
     - memory
+draft: true
 ---
 
 The application we are building is called Acme, so let's start by creating a project directory named `acme`.
