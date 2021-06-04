@@ -1,5 +1,6 @@
 # TODO
 https://nownownow.com/about
+Add a Commonplace book
 
 # Glitch Effect
 https://css-tricks.com/glitch-effect-text-images-svg/
