@@ -6,5 +6,5 @@ draft: false
 
 This is a [now page](https://nownownow.com/about).
 
-- Quit my job to work on [REDACTED] - a learning platform that makes learning fun and accessible to all.
-- Learning Hugo and making this site
+- Writing a liveProject series for Manning related to CDK for Terraform, TypeScript, and AWS
+- Learning about digital marketing, AppsFlyer, and Mixpanel

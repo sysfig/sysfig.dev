@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Understanding d3.js</title>
+  <script src="https://cdn.jsdelivr.net/npm/d3-selection@2"></script>
+  <script src="https://d3js.org/d3-array.v2.min.js"></script>
+  <script src="https://d3js.org/d3-color.v2.min.js"></script>
+  <script src="https://d3js.org/d3-format.v2.min.js"></script>
+  <script src="https://d3js.org/d3-interpolate.v2.min.js"></script>
+  <script src="https://d3js.org/d3-time.v2.min.js"></script>
+  <script src="https://d3js.org/d3-time-format.v3.min.js"></script>
+  <script src="https://d3js.org/d3-axis.v2.min.js"></script>
+  <script src="https://d3js.org/d3-scale.v3.min.js"></script>
+</head>
+<body>
+  <script>
+    const data = [
+      {
+        product: "cap",
+        sales: 39,
+      },
+      {
+        product: "shorts",
+        sales: 14,
+      },
+      {
+        product: "socks",
+        sales: 12,
+      },
+      {
+        product: "jacket",
+        sales: 6,
+      },
+      {
+        product: "keychain",
+        sales: 25,
+      }
+    ]
+
+    const chartHeight = 100;
+    const chartWidth = 100;
+    const axisLabelMargin = 5;
+
+    const x = d3.scaleBand()
+      .domain(data.map(d => d.product))
+      .range([0, chartWidth])
+
+    const y = d3
+      .scaleLinear()
+      .domain([0, d3.max(data, d => d.sales)])
+      .range([chartHeight, 0])
+
+    const svg = d3
+      .select("body")
+      .append("svg")
+      .attr("viewBox", "-10 0 110 110")
+      .attr("height", "400")
+      .attr("width", "400");
+    
+    const rect = svg
+      .append("g")
+      .selectAll("rect")
+      .data(data)
+      .join("rect")
+      .attr("fill", "black")
+      .attr("x", d=> x(d.product))
+      .attr("width", x.bandwidth())
+      .attr("y", d => y(d.sales))
+      .attr("height", d => (chartHeight - y(d.sales)))
+
+    const xAxis = svg.append("g")
+      .attr("transform", `translate(0,${chartHeight})`)
+      .call(d3.axisBottom(x).tickSize(1))
+      .attr("stroke-width", "0.25")
+      .attr("font-size", "3")
+      .attr("color", "black")
+    
+
+    const yAxis = svg.append("g")
+      .call(d3.axisLeft(y).tickSize(1))
+      .attr("stroke-width", "0.25")
+      .attr("font-size", "3")
+      .attr("color", "black")
+    
+  </script>
+</body>
+</html>
