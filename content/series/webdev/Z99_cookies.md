@@ -1,4 +1,11 @@
-# Cookies
+---
+title: Cookies
+slug: cookies
+date: 2020-12-15T16:17:54-08:00
+chapter: z
+order: 99
+draft: true
+---
 
 - Layman
   - What are cookies

@@ -1,3 +1,12 @@
+---
+title: IndexedDB
+slug: indexeddb
+date: 2020-12-15T16:17:54-08:00
+chapter: s
+order: 01
+draft: true
+---
+
 IndexedDB is an in-browser database that can be used to persist data for offline uses. IndexedDB is a type of database called an object store; in particular, IndexedDB stores JavaScript objects against a unique key.
 
 ## IndexedDB vs. X

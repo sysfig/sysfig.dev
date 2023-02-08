@@ -1,4 +1,14 @@
-# Phases of the Game
+---
+title: Phases of the Game
+slug: phases-of-game
+date: 2023-02-07T20:49:51.230Z
+publishDate:
+chapter: a
+order: 99
+tags:
+    - chess
+draft: true
+---
 
 A chess game is usually broken into 3 phases - [opening](https://en.wikipedia.org/wiki/Chess_opening), [middlegame](https://en.wikipedia.org/wiki/Chess_middlegame), and [endgame](https://en.wikipedia.org/wiki/Chess_endgame). Each phase requires a different set of skills to master.
 

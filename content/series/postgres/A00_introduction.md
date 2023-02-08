@@ -1,3 +1,14 @@
+---
+title: Introduction
+slug: intro
+date: 2022-04-30T12:11:00+01:00
+chapter: a
+order: 00
+tags:
+  - postgres
+draft: true
+---
+
 PostgreSQL is an open-source, object-relational database management system (ORDBMS) based on [POSTGRES](https://dsf.berkeley.edu/postgres.html). The POSTGRES project was developed by a team at the University of California at Berkeley Computer Science Department, led by Professor Michael Stonebraker. The project lasted from 1986 to 1994, and its last release was v4.2.
 
 In 1994, Andrew Yu and Jolly Chen rewrote POSTGRES in ANSI C and replaced the original query interpreter (PostQUEL) with a SQL interpreter. This became Postgres95 and later PostgreSQL (or simply 'Postgres')

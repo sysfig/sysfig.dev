@@ -7,20 +7,15 @@
         <div class="list-item">
           <div class="list-item__meta">
               <div>// {{ .Date.Format "2 Jan 06" }}
-                {{- if isset .Params "tags" -}}
-                  {{- if gt (len .Params.tags) 0 -}}<span class="separator">&bullet;</span>{{- range .Params.tags -}}
-                    <div class="tag"><a href="/tags/{{ . }}/">{{ . }}</a></div>
-                    {{- end -}}
-                  {{- end -}}
-                {{- end -}}
+                {{- partial "tags.html" . -}}
             </div>
           </div>
           {{ if .IsSection -}}
             <a href="{{ .RelPermalink }}">
               <span class="list-item__kind list-item__kind-series">Series</span><span class="list-item__title">{{ .Title }}</span>
             </a>
-          {{- else if hasPrefix .Dir "series/" -}}
-            <a href="{{ .RelPermalink }}"><span class="list-item__kind list-item__kind-postseries-post">Post</span></a><a href="/{{ .Dir }}"><span class="list-item__kind list-item__kind-postseries-series">Series ↗</span></a><a href="{{ .RelPermalink }}"><span class="list-item__title">{{ .Title }}</span></a>
+          {{- else if hasPrefix .File.Dir "series/" -}}
+            <a href="{{ .RelPermalink }}"><span class="list-item__kind list-item__kind-postseries-post">Post</span></a><a href="/{{ .File.Dir }}"><span class="list-item__kind list-item__kind-postseries-series">Series ↗</span></a><a href="{{ .RelPermalink }}"><span class="list-item__title">{{ .Title }}</span></a>
           {{- else -}}
             <a href="{{ .RelPermalink }}">
               <span class="list-item__title">{{ .Title }}</span>

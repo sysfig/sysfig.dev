@@ -1,3 +1,16 @@
+---
+title: Variations
+slug: variations
+date: 2023-02-07T20:49:51.230Z
+publishDate:
+chapter: z
+order: 99
+tags:
+    - chess
+draft: true
+---
+
+
 - Shuffle Chess - the pieces on each player's the home ranks are randomized
 - [Fischer Random chess](https://en.wikipedia.org/wiki/Fischer_random_chess) - same as shuffle chess but with 2 additional constraints:
   - the bishops must be on different colored squares

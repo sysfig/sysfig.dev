@@ -1,36 +1,47 @@
-# TODO
-https://nownownow.com/about
-Add a Commonplace book
+# sysfig.dev
 
-# Glitch Effect
-https://css-tricks.com/glitch-effect-text-images-svg/
-https://tympanus.net/codrops/2017/12/21/css-glitch-effect/
-https://tympanus.net/Tutorials/CSSGlitchEffect/index.html
-https://freefrontend.com/css-text-glitch-effects/
-https://codepen.io/cipherbeta/pen/YLdVjw
-https://ihatetomatoes.net/how-to-create-css-glitch-effect/
-https://codemyui.com/tag/distortion-effect/
-https://csspoint101.com/45-css-glitch-effect/
+## Quickstart
 
-# CSS Custom Properties
+1. [Install Hugo](https://gohugo.io/installation/)
+2. Run `hugo server`
 
-https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
+## Walkthrough
 
-# Link vs Import
-https://stackoverflow.com/questions/7199364/import-vs-link
-https://www.lifewire.com/difference-between-important-and-link-3466404
+Hugo separates content with representation. We are taking things one step further and separated everything that is not content (not in `content/` or `data/`) and encapsulating it into a theme called `sysfig`.
 
-# CSS Blend Mode
-https://medium.com/@bennettfeely/css-blend-modes-could-be-the-next-big-thing-in-web-design-6b51bf53743a
+We start by looking at `themes/sysfig/layouts/_default/baseof.html`, which holds the base template used as the outermost shell of our site.
 
-# Fingerprinting
-https://stackoverflow.com/questions/4095487/css-file-caching
-https://webpack.js.org/guides/caching/#output-filenames
-https://web.dev/http-cache/#invalidating_and_updating_cached_responses
-https://en.wikipedia.org/wiki/Fingerprint_(computing)
-https://discourse.gohugo.io/t/please-explain-fingerprinting-for-static-websites-to-me/16771
+```html
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+{{- partial "head.html" . -}}
+<body>
+    {{- partial "header.html" . -}}
+    <main>
+        {{- block "main" . }}{{- end }}
+    </main>
+    {{- partial "footer.html" . -}}
+    <script src="{{ "js/main.js" | relURL }}"></script>
+</body>
+</html>
+```
 
-# Course
-http://www.joesacher.com/blog/2017/08/03/implementing-series-in-hugo/
-https://moonbooth.com/hugo/
-https://gaston.life/writings/hugo/
+The base template includes partials for:
+
+- the `<head>` (`themes/sysfig/layouts/partials/head.html`) - set `<title>` and stylesheets
+- header (`themes/sysfig/layouts/partials/header.html`) - navigation
+- footer (`themes/sysfig/layouts/partials/footer.html`) - purely decorative
+
+At the bottom is a link to a static JavaScript file at `themes/sysfig/static/js/main.js`, whose purpose is to enable the menu button to work on mobile.
+
+```js
+document.getElementById("menu-button").addEventListener('click', () => {
+  document.getElementById("main-nav").classList.toggle("mobile");
+});
+```
+
+## TODOs
+
+- Add [Open Graph](https://ogp.me/) metadata
+- Add created as well as last-updated date
+- Add maturity levels (e.g. sprout, bush, tree)

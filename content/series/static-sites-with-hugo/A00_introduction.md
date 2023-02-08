@@ -10,4 +10,4 @@ tags:
 draft: true
 ---
 
-[Hugo](https://gohugo.io/) is an open-source static site generator.
+[Hugo](https://gohugo.io/) is an open-source static site generator, written in Go.

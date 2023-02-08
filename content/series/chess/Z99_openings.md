@@ -1,3 +1,16 @@
+---
+title: Openings
+slug: openings
+date: 2023-02-07T20:49:51.230Z
+publishDate:
+chapter: z
+order: 99
+tags:
+    - chess
+draft: true
+---
+
+
 There are hundreds of popular openings, but there are some basic principles that underlie most of them.
 
 1. Develop the pieces - at the beginning of the game, all your pieces are 'stuck' behind the rank of pawns. Apart from the pawns and knight, all of the other pieces cannot move. So one of the aims of the opening is to push _some_ pawns forward and allow the pieces on the home ranks to move out and away from home ranks. Afterall, the enemy's king is on the opposite side of the board, your pieces needs to leave the home ranks in order to attack the king.
@@ -123,7 +136,21 @@ Although some openings are statistically better than others, you may wish to pla
   - e5 ([Open Game](https://en.wikipedia.org/wiki/Open_Game)) - counter-attacks the center
     - Bb5 ([Portuguese Opening](https://en.wikipedia.org/wiki/Portuguese_Opening))
     - Bc4 ([Bishop's Opening](https://en.wikipedia.org/wiki/Bishop%27s_Opening))
-    - c3 ([Lopez Opening](https://en.wikipedia.org/wiki/Lopez_Opening) / MacLeod Attack)
+    - c3 (C20 | [Lopez Opening](https://en.wikipedia.org/wiki/Lopez_Opening) / Centre Pawn Opening / MacLeod Attack) - prepares white's d-pawn to push to d4, which would establish a strong center. However, this blocks the knight from moving to c3
+      - **...d5** - attacks white's undefended e5-pawn, black's d5-pawn is defended by the Queen
+        - d3 - defends the e5-pawn, but the d3-pawn now blocks the F-bishop
+          - **...Nf6** - develops the knight. Applies more pressure on the e5-pawn. Black now have two pieces attacking it, whilst it's only being defended by one white pawn. If white moves exd5, the knight can be used to retake white's pawn instead of moving the Queen. However, this moves blocks black's f-pawn from progressing, which may not be an issue if black plans to do king-side castle
+            - **Nf3** - attack black's undefended e5-pawn
+              - **...dxe4**
+                - **Ne5**
+                - _dxe4_ - opens the d-file for black's Queen to capture white's Queen, forcing white's King to move to d1 next move, hence forfeiting the ability to castle. The e4-pawn is also undefended, meaning black can capture it with its f6-knight.
+                  - **Qxd1+** - forces a trade of the Queens, forcing white's King to move, forfeiting its ability to castle
+                    - Kxd1 - no other possible moves
+        - **exd5** - trades white's undefended e5-pawn with black's d5-pawn
+          - **...Qxd5** - recaptures the pawn material
+            - **d4** - baits black to go exd4, which would allow white to cxd4, essentially trading a non-central pawn with a central pawn
+      - ...Nf6 - attacks white's undefended e-4 pawn
+        - Nf3
     - d4 - forces black's e5-pawn to take d4, maintaining white's e4-pawn's control in the center. This also opens up the Queen's file and Queen's c1-bishop's diagonal, making it easier to do a queenside castle. However, this also opens up the King to attack from both diagonals.
       - exd4 ([Center Game](https://en.wikipedia.org/wiki/Center_Game))
         - Qxd4 - reclaims material

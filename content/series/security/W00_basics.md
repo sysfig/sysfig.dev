@@ -1,3 +1,13 @@
+---
+title: Basics
+slug: basics
+date: 2022-04-30T12:11:00+01:00
+chapter: w
+order: 00
+tags: []
+draft: true
+---
+
 # Ideas
 
 - Defence-in-depth - https://en.wikipedia.org/wiki/Defense_in_depth_(computing)

@@ -1,0 +1,8 @@
+{{- if isset .Params "tags" -}}
+  {{- if gt (len .Params.tags) 0 -}}
+    <span class="separator">&bullet;</span>
+    {{- range .Params.tags -}}
+      <div class="tag"><a href="/tags/{{ . }}/">{{ . }}</a></div>
+    {{- end -}}
+  {{- end -}}
+{{- end -}}

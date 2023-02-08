@@ -1,3 +1,12 @@
+---
+title: Character Encoding
+slug: character-encoding
+date: 2023-02-07T20:36:57.974Z
+publishDate:
+tags: []
+draft: true
+---
+
 In traditional computing (as opposed to quantum computing), all data, be it videos, images, audio, or texts, are stored as binary numbers (`0`s and `1`s).
 
 To store a piece of string (a sequence of characters used to represent text), you store each character sequentially. But you can't just store the character `a` in the hard drive; computers and digital storage devices only understand binary numbers. Therefore, in order to store or transmit a character, you must first convert it into a number. Converting information (e.g. character) into code - a data format that can be stored and transmitted (e.g. numbers) - is known as encoding. Since we are encoding characters, this process is more specifically known as _character encoding_.

@@ -1,3 +1,14 @@
+---
+title: Strike the iron whilst it's hot
+slug: strike-the-iron-whilst-its-hot
+date: 2020-12-31T16:35:12-08:00
+chapter: z
+order: 99
+tags: []
+draft: true
+---
+
+
 I used to think that if you have an idea, that you should let it sit for a few months, and if after a few months you still think it's great, then go with it. The rationale behind that is you have a limited time, so whenever you commit to doing something, it better be good.
 
 That's not bad advice.

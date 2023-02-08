@@ -1,3 +1,15 @@
+---
+title: Panic
+slug: panic
+date: 2020-12-30T16:14:33-08:00
+chapter: z
+order: 99
+tags:
+    - golang
+draft: true
+---
+
+
 A panic is a type of error that:
 
 - is not handled by the code (i.e. is not expected/anticipated by the programmer)

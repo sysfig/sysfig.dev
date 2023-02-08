@@ -1,3 +1,16 @@
+---
+title: Pseudocode
+slug: pseudocode
+date: 2023-02-07T20:49:51.230Z
+publishDate:
+chapter: b
+order: 1
+tags:
+    - computer-science
+draft: true
+---
+
+
 Actions
 
 Conditions with boolean expressions - if/else

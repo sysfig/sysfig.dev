@@ -1,3 +1,15 @@
+---
+title: AWS
+slug: aws
+date: 2023-02-07T20:44:43.142Z
+publishDate:
+chapter: z
+order: 99
+tags:
+    - aws
+draft: true
+---
+
 # VPCs
 
 VPCs allows you to isolate resources into completely different networks.

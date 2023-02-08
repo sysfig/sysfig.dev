@@ -1,3 +1,14 @@
+---
+title: Dump
+slug: dump
+date: 2020-12-30T16:14:33-08:00
+chapter: t
+order: 2
+tags:
+    - golang
+    - testing
+draft: true
+---
 
 ### Testing Multiple Scenarios
 

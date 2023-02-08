@@ -23,3 +23,9 @@ It means it's fine to say what you believe in today and contradict yourself tomo
 It can also mean don't be afraid of the _status quo_. Software engineering isn't a new discipline, there are many established theories and practices of how things should be done. But you should remember that the people who came up with those established theories and practices went against the status quo of their time. So don't be a sheep and follow what people do just because "that's the way we've always done it". Question everything.
 
 In this series, I share some of the insights I have acquired in my 8 years working in software. Each one is condensed into a short phrase akin to the Emerson quote, so you can remember and apply it in your everyday programming life.
+
+Different sections cover different areas:
+
+- J (Job-Hunting)
+- L (Learning)
+- T (Testing)

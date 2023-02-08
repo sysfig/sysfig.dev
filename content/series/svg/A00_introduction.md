@@ -1,3 +1,12 @@
+---
+title: Introduction
+slug: intro
+date: 2020-12-15T16:17:54-08:00
+chapter: a
+order: 00
+draft: true
+---
+
 SVG, short for Scalable Vector Graphics, is a image format for 2D vector images where the data is stored as an Extensible Markup Language (XML) file.
 
 Here's a simple SVG file that produces the image below.

@@ -1,3 +1,14 @@
+---
+title: Dump
+slug: dump
+date: 2023-02-07T20:49:51.230Z
+publishDate:
+chapter: z
+order: 99
+tags:
+    - docker
+draft: true
+---
 
 You may be tempted to test out the echo server by sending a request to `localhost:8080`; if you did, you'll be met with the error:
 

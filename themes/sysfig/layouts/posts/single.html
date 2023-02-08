@@ -2,12 +2,7 @@
   <div class="single">
     <h1 class="title">{{ .Title }}</h1>
     <div class="page-meta">// {{ .Date.Format "2 Jan 06" -}}
-      {{- if isset .Params "tags" -}}
-        {{- if gt (len .Params.tags) 0 -}}<span class="separator">&bullet;</span>{{- range .Params.tags -}}
-          <div class="tag"><a href="/tags/{{ . }}/">{{ . }}</a></div>
-          {{- end -}}
-        {{- end -}}
-      {{- end -}}
+      {{- partial "tags.html" . -}}
     </div>
     <div class="content">{{ .Content }}</div>
   </div>

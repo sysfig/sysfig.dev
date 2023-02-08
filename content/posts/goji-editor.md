@@ -1,4 +1,11 @@
-# The Story of the Goji Editor
+---
+title: The Story of the Goji Editor
+slug: goji-editor
+date: 2023-02-07T20:36:57.974Z
+publishDate:
+tags: []
+draft: true
+---
 
 Over the last 6 months, I have been working full-time on a personal project that I have been itching to do for the last few years. It's called Goji and it's a self-learning platform that allows users to organize their notes as a series of dependent notes (i.e. B requires A), ultimately forming a directional [graph](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)). There's a lot more to it than that, but I'll let the product speak for itself when the time comes.
 

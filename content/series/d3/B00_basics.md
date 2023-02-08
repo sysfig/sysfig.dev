@@ -1,3 +1,15 @@
+---
+title: Basics
+slug: basics
+date: 2023-02-07T20:49:51.230Z
+publishDate:
+chapter: a
+order: 1
+tags:
+    - d3
+draft: true
+---
+
 # Scaffolding
 
 We are going to learn d3 from scratch, so let's start with a blank HTML5 scaffold. Create a new file that ends with `.html` (e.g. `d3.html`) and paste in the following.

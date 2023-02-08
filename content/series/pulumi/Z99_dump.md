@@ -1,4 +1,12 @@
-# Pulumi
+---
+title: Pulumi
+slug: pulumi
+date: 2022-04-30T12:11:00+01:00
+chapter: z
+order: 99
+tags: []
+draft: true
+---
 
 Most web applications used today are deployed on an Infrastructure-as-a-Service (IaaS) provider (i.e. 'cloud provider') rather than on-premises. All major cloud providers provide a web-based graphical user interface (GUI) for administrators to manage their resources. For example, an administrator can use such GUI to create a new Linux server, configure a load balancer, add a user, etc.
 

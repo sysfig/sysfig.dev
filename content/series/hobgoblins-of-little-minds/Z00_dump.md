@@ -4,8 +4,7 @@ slug: dump
 date: 2020-12-31T16:35:12-08:00
 chapter: z
 order: 99
-tags:
-    - programming
+tags: []
 draft: true
 ---
 

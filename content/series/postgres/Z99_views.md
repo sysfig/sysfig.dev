@@ -1,4 +1,14 @@
-# Views
+---
+title: Views
+slug: views
+date: 2022-04-30T12:11:00+01:00
+chapter: z
+order: 99
+tags:
+  - postgres
+draft: true
+---
+
 
 There are two places you can specify which queries are to be run on the database. The first is in the client code using a client library such as C's [`libpq`](https://www.postgresql.org/docs/current/libpq.html). Another is in the database itself in the form of _views_.
 

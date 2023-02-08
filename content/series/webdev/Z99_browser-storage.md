@@ -1,3 +1,13 @@
+---
+title: Browser Storage
+slug: browser-storage
+date: 2020-12-15T16:17:54-08:00
+chapter: z
+order: 99
+draft: true
+---
+
+
 When building any non-trivial browser-based web application, there's usually a need to persist data across page refreshes. You may want to persist data to:
 
 - Provide a better user experience (you don't want the user to log in after every page now, do you?)

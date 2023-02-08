@@ -1,3 +1,15 @@
+---
+title: Memory concurrency
+slug: memory-concurrency
+date: 2020-12-30T16:14:33-08:00
+chapter: z
+order: 99
+tags:
+    - golang
+draft: true
+---
+
+
 Memory
   - heap - global, dynamically allocated
   - stack - local to the scope of the function

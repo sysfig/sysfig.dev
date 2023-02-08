@@ -1,3 +1,12 @@
+---
+title: stdlib
+slug: stdlib
+date: 2020-12-30T00:00:57-08:00
+chapter: a
+order: 99
+tags:
+    - golang
+---
 
 The standard library contains the most commonly-imported packages such as:
 

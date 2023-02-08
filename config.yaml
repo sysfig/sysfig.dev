@@ -1,4 +1,15 @@
 baseURL: https://sysfig.dev
+enableGitInfo: true
+frontmatter:
+  date:
+  - date
+  expiryDate:
+  - expiryDate
+  lastmod:
+  - :fileModTime
+  - :git
+  publishDate:
+  - publishDate
 languageCode: en-US
-title: sysfig
 theme: sysfig
+title: sysfig

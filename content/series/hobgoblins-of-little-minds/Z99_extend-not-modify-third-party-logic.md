@@ -1,3 +1,13 @@
+---
+title: Extend, Not Modify
+slug: extend-not-modify
+date: 2020-12-31T16:35:12-08:00
+chapter: z
+order: 99
+tags: []
+draft: true
+---
+
 ## Extend, Not Modify
 
 Having recently joined a new company, I was in the process of acquainting myself with the new codebase. Whilst studying the Express-based API, I noticed that all of our endpoints are using [`res.jsonp()`](https://expressjs.com/en/api.html#res.jsonp) to send back JSON data instead of [`res.json()`](https://expressjs.com/en/api.html#res.json).

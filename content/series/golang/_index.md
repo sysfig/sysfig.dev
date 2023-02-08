@@ -1,5 +1,5 @@
 ---
-title: Generate Static Sites with Hugo
+title: Golang
 date: 2020-12-14T17:03:39-08:00
 type: series
 layout: single

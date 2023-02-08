@@ -1,3 +1,13 @@
+---
+title: Keen to Prove
+slug: keen-to-prove
+date: 2020-12-31T16:35:12-08:00
+chapter: z
+order: 99
+tags: []
+draft: true
+---
+
 [Categorized under communication]
 
 Never be too keen to prove a point. Whether that's:

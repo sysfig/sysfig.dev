@@ -1,3 +1,13 @@
+---
+title: Dump
+slug: dump
+date: 2020-12-15T16:17:54-08:00
+chapter: z
+order: 99
+draft: true
+---
+
+
 ## What is Venture Capital? How does it differ from other types of funding?
 
 _Venture capital_ (VC) is one type of _private equity_ (PE) funding available to _startups_. When accepting VC funding from a _VC firm_, the startup gives up a portion of the company (i.e. _equity_, say 25%) in exchange for a large sum of money (e.g. US$1,000,000).

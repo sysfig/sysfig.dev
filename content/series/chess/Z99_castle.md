@@ -1,3 +1,16 @@
+---
+title: Castle
+slug: castle
+date: 2023-02-07T20:49:51.230Z
+publishDate:
+chapter: z
+order: 99
+tags:
+    - chess
+draft: true
+---
+
+
 1. Move the king two places towards the rook
 2. Move the rook towards and past the king and lands adjacent to the king
 

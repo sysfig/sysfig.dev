@@ -7,6 +7,8 @@ order: 4
 draft: true
 ---
 
+Hugo is written in 
+
 Hugo comes in two versions - regular and extended. The extended version provides support for:
 
 - Asset management

@@ -2,6 +2,7 @@
 title: {{ replace .Name "-" " " | replaceRE "^(.+_)?(.*)" "$1" | title }}
 slug: {{ replaceRE "^(.+_)?(.*)" "$1" .Name | lower }}
 date: {{ .Date }}
+publishDate:
 chapter: {{ replaceRE "^([[:alpha:]]+).*" "$1" .Name | lower }}
 order: {{ int (replaceRE "^[[:alpha:]]+(\\d+)_.*" "$1" .Name | strings.TrimLeft "0" | default 0) }}
 tags:

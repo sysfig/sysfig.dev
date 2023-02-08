@@ -1,3 +1,14 @@
+---
+title: Dump
+slug: dump
+date: 2023-02-07T20:49:51.230Z
+publishDate:
+chapter: z
+order: 99
+tags:
+    - d3
+draft: true
+---
 
 
 d3 manipulates the DOM based on data. For example, if we have an array of 3 data points, we can pass this array to d3, who may add 3 `<li>` elements to an `<ol>` element.

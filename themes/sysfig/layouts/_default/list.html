@@ -5,12 +5,7 @@
     {{ range .Pages }}
       <div class="list-item">
         <div class="list-item__meta">// <span class="list-item__meta__date">{{ .Date.Format "2 Jan 06" }}</span>
-          {{- if isset .Params "tags" -}}
-            {{- if gt (len .Params.tags) 0 -}}<span class="separator">&bullet;</span>{{- range .Params.tags -}}
-              <div class="tag"><a href="/tags/{{ . }}/">{{ . }}</a></div>
-              {{- end -}}
-            {{- end -}}
-          {{- end -}}
+          {{- partial "tags.html" . -}}
         </div>
         <a class="list-item__title" href="{{ .RelPermalink }}">{{ .Title }}</a>
       </div>
