@@ -1,11 +1,18 @@
 ---
 title: Cookies
 slug: cookies
-date: 2020-12-15T16:17:54-08:00
+date: 2023-02-09T17:04:09-08:00
 chapter: z
 order: 99
 draft: true
 ---
+
+Cookies were designed to storage small pieces of data given by the server from its response, so that the browser will *automatically* store it and send it back to the server in subsequent requests.
+
+However, there's no stopping you from storing arbitrary data in a cookie even when that data is not sent from the server. Those cookies will be sent to the server on every request.
+
+A cookie can store up to 4096 bytes of data.
+
 
 - Layman
   - What are cookies

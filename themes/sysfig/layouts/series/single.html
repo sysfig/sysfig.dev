@@ -63,7 +63,7 @@
       <div class="syllabus__chapter">
         <div class="syllabus__chapter__name">{{ . }}</div>
         <div class="syllabus__chapter__posts">
-          {{ range ($pages.ByParam "order").ByParam "chapter" }}
+          {{ range ($pages.ByParam "order").Reverse.ByParam "chapter" }}
             {{ if and .IsPage (eq .Params.chapter $chapter) }}
               <a class="chapter-item" href="{{ .RelPermalink }}">
                 <span class="chapter-item__title">{{ .Title }}</span><span class="chapter-item__reading-time">{{ .ReadingTime }}m</span>
@@ -73,6 +73,7 @@
         </div>
       </div>
     {{ end }}
+    {{ if (isset .Params "software") }}
     <div class="software">
       {{- $supported_len := (len .Params.software.supported) -}}
       {{- $tested_len := (len .Params.software.tested) -}}
@@ -89,5 +90,6 @@
         {{ end }}.
       {{- end -}}</p>
     </div>
+    {{ end }}
   </div>
 {{ end }}
