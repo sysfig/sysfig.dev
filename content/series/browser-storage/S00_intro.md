@@ -30,7 +30,7 @@ There are also dedicated JavaScript libraries that implements its own in-memory 
 - [RxDB](https://rxdb.info/) - a NoSQL client side database that can be used on top of IndexedDB. Supports indexes, compression and replication. Also adds cross tab functionality and observability to IndexedDB.
 - [`idb`](https://github.com/jakearchibald/idb) (previously called 'IndexedDB Promised') - a thin wrapper around IndexedDB that provides usability improvements such as promises.
 - [`idb-keyval`](https://github.com/jakearchibald/idb-keyval) - a key-value store backed by IndexedDB
-- [Dexie.js](https://dexie.org) - a wrapper around IndexedDB
+- [Dexie.js](https://dexie.org) - a wrapper around IndexedDB with support for observability (i.e. live queries) - meaning it will automatically detect changes to the database and re-run queries that is affected by the change. Unlike the Web Storage API, which emits a `storage` event when changes are made, there are no native observer implementation for IndexedDB.
 - [JsStore](https://jsstore.net/) - a wrapper around IndexedDB that you can query with SQL-like syntax
 
 Some APIs have since been deprecated:

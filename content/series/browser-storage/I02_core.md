@@ -21,7 +21,7 @@ draft: true
 
 According to `caniuse.com`, IndexedDB is fully or partially supported on [98.43%](https://caniuse.com/indexeddb) of all browsers.
 
-Firefox supports IndexedDB, but notably **not** in its Private Browsing mode. If you enter `window.indexedDB` in Firefox's console whilst in Private Browsing mode, you'll get a `null`.
+Firefox supports IndexedDB, but notably **not** in its Private Browsing mode. If you enter `window.indexedDB` in Firefox's console whilst in Private Browsing mode, you'll get a `null` (this behavior may have changed since the time of this writing - check for yourself!).
 
 So even though most browsers support IndexedDB, if your application depends on IndexedDB for key functionality, it would still be wise to still check for browsers support.
 
